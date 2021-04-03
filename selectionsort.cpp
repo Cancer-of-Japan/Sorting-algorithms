@@ -7,7 +7,7 @@ void printArray(int arr[], int n);
 void selectionSort(int arr[], int n);
 
 int main(){
-	int arr[] = {5, 4, 3, 2, 1};
+	int arr[] = {4, 3, 5, 2, 1};
 	int n = sizeof(arr)/sizeof(arr[0]);
 	printf("Original...\n");
 	printArray(arr, n);
