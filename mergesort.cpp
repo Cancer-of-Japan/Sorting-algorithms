@@ -2,6 +2,13 @@
 
 using namespace std;
 
+void printArray(int arr[], int n){
+    int i;
+    for(i = 0; i < n; i++){
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
 
 void merge(int arr[], int l, int m, int r){
     int n1 = m - l + 1;
@@ -10,12 +17,12 @@ void merge(int arr[], int l, int m, int r){
     int L[n1], R[n2];
     
 	//Divide original array to 2 
-    for(int i = 0; i < n1; i++){
+    for(int i = 0; i < n1; i++)
         L[i] = arr[l + i];
-    }
-    for(int j = 0; j < n2; j++){
+    
+    for(int j = 0; j < n2; j++)
         R[j] = arr[m + 1 + j];
-    }
+    
 
     
     //i...initial index of 1st sub-arr
@@ -50,26 +57,25 @@ void merge(int arr[], int l, int m, int r){
         j++;
         k++;
     }
+    cout << "Current..." << endl;
+    printArray(L, n1 + 1);
+    printArray(R, n2 + 1);
 }
 
 void mergeSort(int arr[], int l, int r){
     if(l >= r){
         return;
     }
-    int m = l + (r-1)/2;
+    
+    
+    //m is parameter   
+    int m = l + (r-l)/2;
     mergeSort(arr, l, m);
     mergeSort(arr, m+1, r);
     merge(arr, l, m, r);
 }
 
 
-void printArray(int arr[], int n){
-    int i;
-    for(i = 0; i < n; i++){
-        printf("%d ",arr[i]);
-    }
-    printf("\n");
-}
 
 int main(){
     int arr[] = {12, 11, 13, 5, 6, 7};
@@ -80,12 +86,14 @@ int main(){
 	
 	printf("Process Begin...\n");
 	mergeSort(arr, 0, n - 1);
+
 	cout << "Done" << endl;
 	printf("Result...\n");
     printArray(arr, n);
      
      return 0;
 }
+
 
 
 
