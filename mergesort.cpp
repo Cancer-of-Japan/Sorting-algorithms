@@ -58,8 +58,8 @@ void merge(int arr[], int l, int m, int r){
         k++;
     }
     cout << "Current..." << endl;
-    printArray(L, n1 + 1);
-    printArray(R, n2 + 1);
+    printArray(L, n1);
+    printArray(R, n2);
 }
 
 void mergeSort(int arr[], int l, int r){
